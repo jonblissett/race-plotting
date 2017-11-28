@@ -4,4 +4,4 @@ Written in Octave but should be compatible with MATLAB.
 
 Try running raceplot_quiver for examples:
 
-[[https://github.com/jonblissett/race-plotting/blob/master/race_coloured_vel_quiver_lean.png]]
+![plot example](race_coloured_vel_quiver_lean.png)
