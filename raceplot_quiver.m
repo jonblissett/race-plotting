@@ -157,7 +157,7 @@ Portimao_map.w = filtfilt(b,a,w);
 figure(6)
 plot(Portimao_map.dist,lean*180/pi, Portimao_map.dist, atan(filtfilt(b,a,Portimao_map.dDist*fGPS).*filtfilt(b,a,[0 diff(Portimao_map.heading)'.*fGPS/9.81]'))*180/pi)
 xlabel('Distance (m)')
-ylabel('Calculated lean angle (°)')
+ylabel('Calculated lean angle (deg)')
 
 figure(7)
 plot(Portimao_map.dist,Portimao_map.heading)
@@ -173,7 +173,7 @@ xlabel('Distance (m)')
 ylabel('Rate of change of heading (rad/s)')
 %
 if (exist ('OCTAVE_VERSION', 'builtin') > 0)
-    clear -x Portimao_map RaceDM2 locsMin % housekeeping
+    %clear -x Portimao_map RaceDM2 locsMin % housekeeping
     %save'Portimao_map.mat'
     %break
 end
@@ -248,8 +248,8 @@ set(cbh, 'linewidth', 2,'yticklabel', ti, 'FontSize', 16)
 %'tickdir', 'out',
 %'ylabel','v (m/s)',
 %'yLim', [15, 58],
-%'ytick', [15, 30, 45, 58],
-%'yticklabel', [15, ti, 45, 60],
+set(cbh, 'ytick', [0:10:50 59], 'yticklabel', 0:10:60)
+
 xlabel('Position (meters)', 'fontsize', fontsize)
 ylabel('Position (meters)', 'fontsize', fontsize)
 yp = get(gca(),'ylim');
@@ -269,4 +269,4 @@ xlabel('Distance (meters)')
 ylabel('Distance (meters)')
 yp = get(gca(),'ylim');
 xp = get(gca(),'xlim');
-text(xp(2) + diff(xp)*0.05,yp(1) - diff(yp)*0.125,'lean (°)')
+text(xp(2) + diff(xp)*0.05,yp(1) - diff(yp)*0.125,'lean (ï¿½)')
