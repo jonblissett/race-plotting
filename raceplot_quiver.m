@@ -248,7 +248,7 @@ set(cbh, 'linewidth', 2,'yticklabel', ti, 'FontSize', 16)
 %'tickdir', 'out',
 %'ylabel','v (m/s)',
 %'yLim', [15, 58],
-set(cbh, 'ytick', [0:10:50 59], 'yticklabel', 0:10:60)
+%set(cbh, 'ytick', 0:10:60 , 'yticklabel', 0:10:60)
 
 xlabel('Position (meters)', 'fontsize', fontsize)
 ylabel('Position (meters)', 'fontsize', fontsize)
